@@ -1,0 +1,17 @@
+{
+    "name": "GmailTo",
+    "description": "Support mailto links that launch in Gmail",
+    "version": "0.1",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "content_script.js"
+            ]
+        }
+    ]
+}
