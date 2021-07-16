@@ -1,7 +1,13 @@
 # GmailTo Chrome Extension
 
-1. Open `chrome://extensions`
-2. Enable Developer Mode by clicking the toggle switch next to Developer mode.
-3. Click the Load unpacked button and select the extension directory.
+## User Instructions
 
+1. [Download the extension](https://github.com/matthiasmiller/chrome-gmailto/archive/refs/heads/main.zip)
+1. Extract the zip file into your Documents folder.
+1. Open `chrome://extensions` in Chrome
+1. Enable Developer Mode by clicking the toggle switch next to Developer mode in the far top-right of the window.
+1. Click the "Load unpacked" button and select the extension directory.
 
+## Developer Instructions
+
+Use the same process, but clone the GitHub repository.
