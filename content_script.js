@@ -1,6 +1,6 @@
 (function() {
     var urlTemplate;
-    GmailTo.getTemplate(function(template) {
+    MailtoAnywhere.getTemplate(function(template) {
         urlTemplate = template;
     });
 
@@ -9,7 +9,7 @@
             e.target.href.toLowerCase().indexOf('mailto:') == 0) {
 
             e.preventDefault(); // Prevent a link from following the URL
-            var url = GmailTo.parseURL(urlTemplate, e.target.href);
+            var url = MailtoAnywhere.parseURL(urlTemplate, e.target.href);
             window.open(url);
         }
     });

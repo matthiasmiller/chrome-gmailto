@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadPresets() {
         document.getElementById('preset').appendChild(document.createElement('OPTION'));
 
-        const presets = GmailTo.getPresets();
+        const presets = MailtoAnywhere.getPresets();
         for (const key in presets) {
             if (presets.hasOwnProperty(key)) {
                 const opt = document.createElement('OPTION');
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'Body=Example%20Body'
         ].join('&');
 
-        const url = GmailTo.parseURL(template, mailto);
+        const url = MailtoAnywhere.parseURL(template, mailto);
 
         const preview = document.getElementById('preview');
         preview.innerHTML = '';
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
     loadPresets();
-    GmailTo.getTemplate(function(template) {
+    MailtoAnywhere.getTemplate(function(template) {
         document.getElementById('url').value = template;
         refreshPreset();
         refreshPreview();

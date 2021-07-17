@@ -1,4 +1,4 @@
-var GmailTo = (function() {
+var MailtoAnywhere = (function() {
     var GOOGLE_DEFAULT = 'https://mail.google.com/mail/?extsrc=mailto&url={URL}';
     var PRESETS = {
         'Google (Default Account)': GOOGLE_DEFAULT,
