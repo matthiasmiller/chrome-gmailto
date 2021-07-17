@@ -25,6 +25,12 @@ var MailtoAnywhere = (function() {
             });
         },
 
+        setTemplate: function (template) {
+            chrome.storage.sync.set({
+                url: template
+            });
+        },
+
         parseURL: function (template, mailto) {
             const url = new URL(mailto);
 

@@ -56,6 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
         refreshPreset();
         refreshPreview();
     });
+
+    document.getElementById('save').addEventListener('click', function() {
+        MailtoAnywhere.setTemplate(document.getElementById('url').value);
+        window.close();
+    })
 });
 
 
