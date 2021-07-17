@@ -3,6 +3,9 @@
 <head>
     <title>Mailto Anywhere Options</title>
     <style type="text/css">
+        #logo {
+            float: right;
+        }
         #url, #preview {
             font-family: inherit;
             width: 500px;
@@ -11,6 +14,9 @@
 </head>
 <body>
 
+<img src="icon128.png" id="logo" />
+
+<h1>Mailto Anyhere</h1>
 <p>
     You can use the following keywords in the URL:
     <ul>
@@ -26,13 +32,15 @@
 
 <p>
     <label>
-        Preset: <select id="preset"></select>
+        Preset:<br/>
+        <select id="preset"></select>
     </label>
 </p>
 
 <p>
     <label>
-        URL: <input type="text" id="url" autocomplete="off" />
+        URL:<br/>
+        <input type="text" id="url" autocomplete="off" />
     </label>
 </p>
 
