@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GmailTo Options</title>
+    <style type="text/css">
+        #url, #preview {
+            font-family: inherit;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    You can use the following keywords in the URL:
+    <ul>
+        <li>{URL}</li>
+        <li>{RAW_QUERY}</li>
+        <li>{To}</li>
+        <li>{Cc}</li>
+        <li>{Bcc}</li>
+        <li>{Subject}</li>
+        <li>{Body}</li>
+    </ul>
+</p>
+
+<p>
+    <label>
+        Preset: <select id="preset"></select>
+    </label>
+</p>
+
+<p>
+    <label>
+        URL: <input type="text" id="url" autocomplete="off" />
+    </label>
+</p>
+
+<p>
+    <label>
+        Preview:<br/>
+        <textarea id="preview" rows="4" readonly="readonly"></textarea>
+    </label>
+</p>
+
+<p>
+    <button id="save">Save</button>
+</p>
+
+<script src="core.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

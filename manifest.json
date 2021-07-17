@@ -10,6 +10,7 @@
                 "https://*/*"
             ],
             "js": [
+                "core.js",
                 "content_script.js"
             ]
         }
@@ -19,5 +20,11 @@
         "32": "icon32.jpg",
         "48": "icon48.jpg",
         "128": "icon128.jpg"
-    }
+    },
+    "action": {
+        "default_popup": "options.html"
+    },
+    "permissions": [
+        "storage"
+    ]
 }
