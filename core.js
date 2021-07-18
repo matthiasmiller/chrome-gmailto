@@ -1,5 +1,4 @@
 const MailtoAnywhere = (function() {
-    const TEMPLATE_EVENT = 'chrome-mailto-anywhere-template-event';
     const GOOGLE_DEFAULT = 'https://mail.google.com/mail/?extsrc=mailto&url={URL}';
     const PRESETS = {
         'Google (Default Account)': GOOGLE_DEFAULT,
