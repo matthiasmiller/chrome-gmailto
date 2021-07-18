@@ -6,7 +6,7 @@
             e.preventDefault(); // Prevent a link from following the URL
 
             MailtoAnywhere.getTemplate(function(urlTemplate) {
-                var url = MailtoAnywhere.parseURL(urlTemplate, e.target.href);
+                const url = MailtoAnywhere.parseURL(urlTemplate, e.target.href);
                 window.open(url);
             });
         }

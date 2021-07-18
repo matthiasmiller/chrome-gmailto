@@ -1,7 +1,7 @@
-var MailtoAnywhere = (function() {
-    var TEMPLATE_EVENT = 'chrome-mailto-anywhere-template-event';
-    var GOOGLE_DEFAULT = 'https://mail.google.com/mail/?extsrc=mailto&url={URL}';
-    var PRESETS = {
+const MailtoAnywhere = (function() {
+    const TEMPLATE_EVENT = 'chrome-mailto-anywhere-template-event';
+    const GOOGLE_DEFAULT = 'https://mail.google.com/mail/?extsrc=mailto&url={URL}';
+    const PRESETS = {
         'Google (Default Account)': GOOGLE_DEFAULT,
         'Google (Account #1)': 'https://mail.google.com/mail/u/0/?extsrc=mailto&url={URL}',
         'Google (Account #2)': 'https://mail.google.com/mail/u/1/?extsrc=mailto&url={URL}',
