@@ -1,6 +1,6 @@
 (function() {
     var urlTemplate;
-    MailtoAnywhere.getTemplate(function(template) {
+    MailtoAnywhere.registerTemplateCallback(function(template) {
         urlTemplate = template;
     });
 

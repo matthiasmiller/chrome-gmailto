@@ -51,15 +51,16 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
     loadPresets();
-    MailtoAnywhere.getTemplate(function(template) {
+    MailtoAnywhere.registerTemplateCallback(function(template) {
         document.getElementById('url').value = template;
         refreshPreset();
         refreshPreview();
     });
 
     document.getElementById('save').addEventListener('click', function() {
-        MailtoAnywhere.setTemplate(document.getElementById('url').value);
-        window.close();
+        MailtoAnywhere.setTemplate(document.getElementById('url').value, function() {
+            window.close();
+        });
     })
 });
 

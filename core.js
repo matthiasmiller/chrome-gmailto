@@ -1,4 +1,5 @@
 var MailtoAnywhere = (function() {
+    var TEMPLATE_EVENT = 'chrome-mailto-anywhere-template-event';
     var GOOGLE_DEFAULT = 'https://mail.google.com/mail/?extsrc=mailto&url={URL}';
     var PRESETS = {
         'Google (Default Account)': GOOGLE_DEFAULT,
@@ -17,17 +18,32 @@ var MailtoAnywhere = (function() {
             return PRESETS;
         },
 
-        getTemplate: function (callback) {
+        registerTemplateCallback: function (callback) {
             chrome.storage.sync.get({
                 url: GOOGLE_DEFAULT
             }, function (items) {
                 callback(items.url);
             });
+            chrome.runtime.onMessage.addListener(function(msg) {
+                if (typeof msg.name !== 'undefined' && msg.name === TEMPLATE_EVENT) {
+                    callback(msg.url);
+                }
+            })
         },
 
-        setTemplate: function (template) {
+        setTemplate: function (template, callback) {
             chrome.storage.sync.set({
                 url: template
+            }, function() {
+                chrome.tabs.query({}, function(tabs) {
+                    for (var i = 0; i < tabs.length; i++) {
+                        chrome.tabs.sendMessage(tabs[i].id, {
+                            name: TEMPLATE_EVENT,
+                            url: template
+                        });
+                    }
+                    callback();
+                });
             });
         },
 
