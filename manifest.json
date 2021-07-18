@@ -1,7 +1,7 @@
 {
     "name": "Mailto Anywhere",
     "description": "Support mailto links that launch in Gmail (default) or other locations.",
-    "version": "0.0.0.1",
+    "version": "0.0.0.2",
     "manifest_version": 3,
     "content_scripts": [
         {
