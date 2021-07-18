@@ -1,0 +1,7 @@
+#logo {
+    float: right;
+}
+#url, #preview {
+    font-family: inherit;
+    width: 500px;
+}
