@@ -18,32 +18,19 @@ var MailtoAnywhere = (function() {
             return PRESETS;
         },
 
-        registerTemplateCallback: function (callback) {
+        getTemplate: function (callback) {
             chrome.storage.sync.get({
                 url: GOOGLE_DEFAULT
             }, function (items) {
                 callback(items.url);
             });
-            chrome.runtime.onMessage.addListener(function(msg) {
-                if (typeof msg.name !== 'undefined' && msg.name === TEMPLATE_EVENT) {
-                    callback(msg.url);
-                }
-            })
         },
 
         setTemplate: function (template, callback) {
             chrome.storage.sync.set({
                 url: template
             }, function() {
-                chrome.tabs.query({}, function(tabs) {
-                    for (var i = 0; i < tabs.length; i++) {
-                        chrome.tabs.sendMessage(tabs[i].id, {
-                            name: TEMPLATE_EVENT,
-                            url: template
-                        });
-                    }
-                    callback();
-                });
+                callback();
             });
         },
 

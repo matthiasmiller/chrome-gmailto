@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
     loadPresets();
-    MailtoAnywhere.registerTemplateCallback(function(template) {
+    MailtoAnywhere.getTemplate(function(template) {
         document.getElementById('url').value = template;
         refreshPreset();
         refreshPreview();
