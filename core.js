@@ -7,10 +7,9 @@ const MailtoAnywhere = (function() {
         'Google (Account #3)': 'https://mail.google.com/mail/u/2/?extsrc=mailto&url={URL}',
         'Google (Account #4)': 'https://mail.google.com/mail/u/3/?extsrc=mailto&url={URL}',
         'Google (Account #5)': 'https://mail.google.com/mail/u/4/?extsrc=mailto&url={URL}',
-        'AOL': 'http://webmail.aol.com/Mail/ComposeMessage.aspx?{RAW_QUERY}',
-        'Yahoo! Mail': 'http://compose.mail.yahoo.com/?{RAW_QUERY}',
-        'Hotmail/Live.com': 'https://outlook.live.com/owa/#{RAW_QUERY}&path=%2fmail%2faction%2fcompose'
-    }
+        'AOL': 'http://webmail.aol.com/Mail/ComposeMessage.aspx?{ARGS}',
+        'Yahoo! Mail': 'http://compose.mail.yahoo.com/?{ARGS}',
+ARGS    }
 
     return {
         getPresets: function() {
@@ -43,8 +42,16 @@ const MailtoAnywhere = (function() {
                 // Handle special keywords
                 if (keyword == 'url')
                     return encodeURIComponent(mailto);
-                if (keyword == 'raw_query')
-                    return url.search.substr(1); //remove ?
+                if (keyword == 'args') {
+                    let parts = [];
+                    if (url.pathname.length) {
+                        parts.push('to=' + encodeURIComponent(url.pathname));
+                    }
+                    if (url.search.length > 1) {
+                        parts.push(url.search.substr(1)); //remove ?
+                    }
+                    return parts.join('&');
+                }
                 if (keyword == 'to')
                     return encodeURIComponent(url.pathname);
 
